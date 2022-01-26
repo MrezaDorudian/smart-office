@@ -1,0 +1,19 @@
+{
+  "admins": {
+    "Admin 1": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "Admin 2": {
+      "username": "elmo",
+      "password": "1111"
+    }
+  },
+  "users": {
+    "user 1": {
+      "username": "0",
+      "password": "4679",
+      "room": "0"
+    }
+  }
+}
