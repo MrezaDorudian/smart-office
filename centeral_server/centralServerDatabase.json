@@ -1,0 +1,73 @@
+{
+    "users": {
+        "User 1": {
+            "id": "0",
+            "password": "4679",
+            "room": "1",
+            "light": "220",
+            "office": "123"
+        }
+    },
+    "activity": {
+        "Activity 1": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-01:00:00:00",
+            "type": "1"
+        },
+        "Activity 2": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:56:15",
+            "type": "1"
+        },
+        "Activity 3": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:56:22",
+            "type": "2"
+        },
+        "Activity 4": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:57:00",
+            "type": "1"
+        },
+        "Activity 5": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:57:06",
+            "type": "2"
+        },
+        "Activity 6": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:57:31",
+            "type": "1"
+        },
+        "Activity 7": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:58:57",
+            "type": "1"
+        },
+        "Activity 8": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:59:25",
+            "type": "1"
+        },
+        "Activity 9": {
+            "username": "0",
+            "office": "4679",
+            "datetime": "2022-01-27 11:59:28",
+            "type": "2"
+        }
+    },
+    "office": {
+        "Office 1": {
+            "id": "4679",
+            "name": "elmo's office"
+        }
+    }
+}

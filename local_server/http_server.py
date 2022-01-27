@@ -1,53 +1,7 @@
 import json
-import time
 from datetime import timedelta
-
-import paho.mqtt.client as mqtt_client
-import threading
 import flask
-import jwt
-from werkzeug.security import generate_password_hash
 from flask_jwt_extended import jwt_required, get_jwt_identity, JWTManager, create_access_token
-from flask_caching import Cache
-import mysql.connector as mysql
-import multiprocessing
-
-
-class MQTTClient:
-    broker_address = 'broker.emqx.io'
-
-    def __init__(self):
-        self.client = mqtt_client.Client()
-        self.client.connect(MQTTClient.broker_address)
-
-    @staticmethod
-    def handle_info(client, userdata, message):
-        message = (message.payload.decode("utf-8"))
-        user_id, password, room_id = message.split(':')
-        auth = MQTTClient.authenticate(user_id, password)
-        print(user_id, password, room_id, auth)
-        # client.connect(MQTTClient.broker_address)
-        client.publish('auth', f'{auth}')
-
-    @staticmethod
-    def authenticate(user_id, password):
-        with open('localServerDatabase.json', 'r') as f:
-            database = json.load(f)
-            for key, value in database['users'].items():
-                if value['username'] == user_id:
-                    if value['password'] == password:
-                        return True
-            return False
-
-    def subscribe(self):
-        self.client.subscribe('info')
-        self.client.on_message = self.handle_info
-        self.client.loop_forever()
-
-
-def setup_mqtt_client():
-    server = MQTTClient()
-    server.subscribe()
 
 
 class HTTPServer:
@@ -312,11 +266,4 @@ def setup_http_server():
 
 
 if __name__ == '__main__':
-    setup_mqtt_client()
-    # jobs = []
-    # p1 = multiprocessing.Process(target=setup_http_server)
-    # jobs.append(p1)
-    # p2 = multiprocessing.Process(target=setup_mqtt_client)
-    # jobs.append(p2)
-    # p1.start()
-    # p2.start()
+    setup_http_server()
