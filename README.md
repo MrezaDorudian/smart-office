@@ -11,4 +11,3 @@ We have 3 parts:
 - MQTT Client/Broker (local server)
 - CoAP Client/Server (local server)
 - HTTP Server (local and centeral servers)
-- LiteSQL Database (local and centeral servers)
